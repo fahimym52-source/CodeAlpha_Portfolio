@@ -45,11 +45,15 @@ const projects = [
   },
 ];
 
-export default function Projects() {
+export default function Projects({ theme = "dark" }) {
+  const isDark = theme === "dark";
+
   return (
     <section
       id="projects"
-      className="relative overflow-hidden bg-[#0b0b19] px-6 py-24"
+      className={`relative overflow-hidden px-6 py-24 transition-colors duration-300 ${
+        isDark ? "bg-[#0b0b19]" : "bg-[#f8f9ff]"
+      }`}
     >
       {/* Background Glow */}
       <div className="absolute left-0 top-20 h-72 w-72 rounded-full bg-purple-600/10 blur-[120px]" />
@@ -62,7 +66,11 @@ export default function Projects() {
             My Recent Work
           </p>
 
-          <h2 className="text-4xl font-bold text-white md:text-5xl">
+          <h2
+            className={`text-4xl font-bold md:text-5xl ${
+              isDark ? "text-white" : "text-gray-900"
+            }`}
+          >
             Featured{" "}
             <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
               Projects.
@@ -71,7 +79,11 @@ export default function Projects() {
 
           <div className="mx-auto mt-5 h-1 w-16 rounded-full bg-gradient-to-r from-purple-500 to-blue-500" />
 
-          <p className="mx-auto mt-6 max-w-xl leading-7 text-gray-400">
+          <p
+            className={`mx-auto mt-6 max-w-xl leading-7 ${
+              isDark ? "text-gray-400" : "text-gray-600"
+            }`}
+          >
             Here are some of my recent projects where I turn ideas into
             functional and creative web experiences.
           </p>
@@ -85,7 +97,11 @@ export default function Projects() {
             return (
               <div
                 key={project.number}
-                className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] transition duration-300 hover:-translate-y-2 hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-500/10"
+                className={`group overflow-hidden rounded-3xl border transition duration-300 hover:-translate-y-2 hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-500/10 ${
+                  isDark
+                    ? "border-white/10 bg-white/[0.03]"
+                    : "border-gray-200 bg-white shadow-sm"
+                }`}
               >
                 {/* Project Preview */}
                 <div className="relative h-52 overflow-hidden">
@@ -104,11 +120,27 @@ export default function Projects() {
 
                 {/* Project Details */}
                 <div className="p-7">
-                  <h3 className="mb-3 text-xl font-bold text-white transition group-hover:text-purple-400">
-                    {project.title}
-                  </h3>
+                  <div className="mb-3 flex items-center justify-between">
+                    <h3
+                      className={`text-xl font-bold transition group-hover:text-purple-400 ${
+                        isDark ? "text-white" : "text-gray-900"
+                      }`}
+                    >
+                      {project.title}
+                    </h3>
 
-                  <p className="mb-6 min-h-20 text-sm leading-7 text-gray-400">
+                    <div
+                      className={`rounded-xl bg-gradient-to-r ${project.gradient} p-2 text-white`}
+                    >
+                      <Icon size={18} />
+                    </div>
+                  </div>
+
+                  <p
+                    className={`mb-6 min-h-20 text-sm leading-7 ${
+                      isDark ? "text-gray-400" : "text-gray-600"
+                    }`}
+                  >
                     {project.description}
                   </p>
 
@@ -117,7 +149,7 @@ export default function Projects() {
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="rounded-lg border border-purple-500/20 bg-purple-500/10 px-3 py-1.5 text-xs text-purple-300"
+                        className="rounded-lg border border-purple-500/20 bg-purple-500/10 px-3 py-1.5 text-xs text-purple-500"
                       >
                         {tech}
                       </span>
@@ -125,12 +157,18 @@ export default function Projects() {
                   </div>
 
                   {/* Links */}
-                  <div className="flex items-center gap-5 border-t border-white/10 pt-5">
+                  <div
+                    className={`flex items-center gap-5 border-t pt-5 ${
+                      isDark ? "border-white/10" : "border-gray-200"
+                    }`}
+                  >
                     <a
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm font-semibold text-white transition hover:text-purple-400"
+                      className={`flex items-center gap-2 text-sm font-semibold transition hover:text-purple-400 ${
+                        isDark ? "text-white" : "text-gray-800"
+                      }`}
                     >
                       Live Demo
                       <FaExternalLinkAlt className="text-xs" />
@@ -141,7 +179,9 @@ export default function Projects() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm font-semibold text-gray-400 transition hover:text-white"
+                        className={`flex items-center gap-2 text-sm font-semibold transition hover:text-purple-400 ${
+                          isDark ? "text-gray-400" : "text-gray-600"
+                        }`}
                       >
                         <FaGithub className="text-lg" />
                         GitHub
@@ -156,7 +196,11 @@ export default function Projects() {
 
         {/* Bottom Text */}
         <div className="mt-14 text-center">
-          <p className="text-sm text-gray-500">More projects coming soon...</p>
+          <p
+            className={`text-sm ${isDark ? "text-gray-500" : "text-gray-600"}`}
+          >
+            More projects coming soon...
+          </p>
         </div>
       </div>
     </section>

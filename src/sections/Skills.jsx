@@ -21,11 +21,15 @@ const skills = [
   { name: "Vite", icon: SiVite, color: "text-purple-400" },
 ];
 
-export default function Skills() {
+export default function Skills({ theme = "dark" }) {
+  const isDark = theme === "dark";
+
   return (
     <section
       id="skills"
-      className="relative overflow-hidden bg-[#0b0b19] px-6 py-24"
+      className={`relative overflow-hidden px-6 py-24 transition-colors duration-300 ${
+        isDark ? "bg-[#0b0b19]" : "bg-[#f8f9ff]"
+      }`}
     >
       {/* Background Glow */}
       <div className="absolute left-0 top-20 h-72 w-72 rounded-full bg-purple-600/10 blur-[120px]" />
@@ -38,7 +42,11 @@ export default function Skills() {
             What I Know
           </p>
 
-          <h2 className="text-4xl font-bold text-white md:text-5xl">
+          <h2
+            className={`text-4xl font-bold md:text-5xl ${
+              isDark ? "text-white" : "text-gray-900"
+            }`}
+          >
             My{" "}
             <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
               Skills.
@@ -47,7 +55,11 @@ export default function Skills() {
 
           <div className="mx-auto mt-5 h-1 w-16 rounded-full bg-gradient-to-r from-purple-500 to-blue-500" />
 
-          <p className="mx-auto mt-6 max-w-xl leading-7 text-gray-400">
+          <p
+            className={`mx-auto mt-6 max-w-xl leading-7 ${
+              isDark ? "text-gray-400" : "text-gray-600"
+            }`}
+          >
             Technologies and tools I use to build modern, responsive, and
             interactive web applications.
           </p>
@@ -61,13 +73,27 @@ export default function Skills() {
             return (
               <div
                 key={index}
-                className="group flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-8 transition duration-300 hover:-translate-y-2 hover:border-purple-500/50 hover:bg-purple-500/[0.05] hover:shadow-xl hover:shadow-purple-500/10"
+                className={`group flex flex-col items-center justify-center rounded-2xl border px-5 py-8 transition duration-300 hover:-translate-y-2 hover:border-purple-500/50 hover:bg-purple-500/[0.05] hover:shadow-xl hover:shadow-purple-500/10 ${
+                  isDark
+                    ? "border-white/10 bg-white/[0.03]"
+                    : "border-gray-200 bg-white shadow-sm"
+                }`}
               >
                 <Icon
-                  className={`mb-5 text-5xl ${skill.color} transition duration-300 group-hover:scale-110`}
+                  className={`mb-5 text-5xl ${skill.color} transition duration-300 group-hover:scale-110 ${
+                    skill.name === "Next.js" || skill.name === "GitHub"
+                      ? isDark
+                        ? "text-white"
+                        : "text-gray-900"
+                      : ""
+                  }`}
                 />
 
-                <h3 className="text-sm font-semibold text-gray-300 transition group-hover:text-white">
+                <h3
+                  className={`text-sm font-semibold transition group-hover:text-purple-500 ${
+                    isDark ? "text-gray-300" : "text-gray-700"
+                  }`}
+                >
                   {skill.name}
                 </h3>
               </div>
@@ -77,7 +103,9 @@ export default function Skills() {
 
         {/* Bottom Text */}
         <div className="mt-12 text-center">
-          <p className="text-sm text-gray-500">
+          <p
+            className={`text-sm ${isDark ? "text-gray-500" : "text-gray-600"}`}
+          >
             Always learning. Always improving.
           </p>
         </div>

@@ -4,8 +4,25 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  --bg-color: #08091b;
+  --text-color: #ffffff;
+  --card-color: #ffffff08;
+  --border-color: #ffffff1a;
+}
+
+.light {
+  --bg-color: #f8f9ff;
+  --text-color: #17172b;
+  --card-color: #ffffff;
+  --border-color: #e5e7eb;
+}
+
 body {
-  background-color: #08091b;
-  color: white;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   font-family: Arial, sans-serif;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
