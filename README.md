@@ -1,16 +1,91 @@
-# React + Vite
+# Personal Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive personal portfolio website built with **React.js** and **Tailwind CSS** as part of my **CodeAlpha Front-End Development Internship – Task 3**.
 
-Currently, two official plugins are available:
+This portfolio showcases my skills, projects, and journey as a Junior Front-End Developer.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Live Demo
 
-## React Compiler
+[View Live Portfolio](https://code-alpha-portfolio-iota-three.vercel.app/)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Technologies Used
 
-## Expanding the ESLint configuration
+- React.js
+- Tailwind CSS
+- JavaScript (ES6+)
+- HTML5
+- Lucide React Icons
+- Vite
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Features
+
+- Modern and clean UI design
+- Fully responsive layout
+- Dark-themed design with purple and blue accents
+- Smooth scrolling navigation
+- Interactive hover effects and animations
+- Personal introduction and About section
+- Skills and technologies showcase
+- Projects showcase
+- Contact section
+
+## 📂 Project Structure
+
+```text
+src/
+├── Components/
+│   ├── Navbar.jsx
+│   ├── Hero.jsx
+│   ├── About.jsx
+│   └── ...
+├── App.jsx
+└── main.jsx
+```
+
+## ⚙️ Installation and Setup
+
+1. Clone the repository:
+
+```bash
+git clone YOUR_REPOSITORY_URL
+```
+
+2. Navigate to the project directory:
+
+```bash
+cd YOUR_PROJECT_NAME
+```
+
+3. Install dependencies:
+
+```bash
+npm install
+```
+
+4. Start the development server:
+
+```bash
+npm run dev
+```
+
+## 👨‍💻 About Me
+
+I'm a Junior Front-End Developer passionate about building modern, responsive, and user-friendly web applications.
+
+I'm continuously learning and improving my skills in React.js, JavaScript, and modern web technologies.
+
+## 🏆 Internship Project
+
+**Program:** CodeAlpha Front-End Development Internship
+
+**Task:** Task 3 – Personal Portfolio Website
+
+**Status:** Completed
+
+## 📬 Connect With Me
+
+- **GitHub:** [fahimym52-source](https://github.com/fahimym52-source)
+
+---
+
+⭐ If you like this project, feel free to give it a star!
