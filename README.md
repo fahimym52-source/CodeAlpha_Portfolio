@@ -47,13 +47,13 @@ src/
 1. Clone the repository:
 
 ```bash
-git clone YOUR_REPOSITORY_URL
+git clone https://github.com/fahimym52-source/CodeAlpha_Portfolio.git
 ```
 
 2. Navigate to the project directory:
 
 ```bash
-cd YOUR_PROJECT_NAME
+cd CodeAlpha_Portfolio
 ```
 
 3. Install dependencies:
